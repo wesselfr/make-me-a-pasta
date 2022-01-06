@@ -14,6 +14,34 @@
         "matching_meat": [],
         "matching_sauce": []
       },
+      "Tagliatelle": {
+        "name": "Tagliatelle",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Pasta",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      },
+      "Fettuccine": {
+        "name": "Fettuccine",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Pasta",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      },
       "Bolognese": {
         "name": "Bolognese",
         "weights": [

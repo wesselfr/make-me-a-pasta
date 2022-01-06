@@ -1,6 +1,7 @@
 use std::{collections::HashMap, fs::File, io::Read};
 
-use serde::{Deserialize, Serialize, __private::de::IdentifierDeserializer};
+use rand::Rng;
+use serde::{Deserialize, Serialize};
 use serde_json::Result;
 
 #[derive(Serialize, Deserialize, Clone, PartialEq)]
@@ -58,7 +59,10 @@ impl IngredientCollection {
             let mut contents = String::new();
             file.unwrap().read_to_string(&mut contents).unwrap();
 
-            self.load_ingredients(&contents);
+            let result = self.load_ingredients(&contents);
+            if result.is_err(){
+                eprintln!("Error while loading ingredients");
+            }
         }
     }
     fn load_ingredients(&mut self, data: &str) -> Result<()> {
@@ -70,12 +74,25 @@ impl IngredientCollection {
     pub fn get_ingredient(&self, name: &str) -> Option<&Ingredient> {
         self.ingredients.get(name)
     }
-    pub fn get_random_ingredient(&self, ingredientType: IngredientType) {}
+    pub fn get_random_ingredient(&self, ingredient_type: IngredientType) -> &Ingredient{
+        let ingredients = self.get_ingredient_of_type(ingredient_type);
+        let item = ingredients[rand::thread_rng().gen_range(0..ingredients.len())];
+        item
+    }
+    pub fn get_random_matching_ingredient(&self, ingredient_type: IngredientType, other_ingredients: Vec<&Ingredient>) -> Option<&Ingredient>{
+        let ingredient = self.get_random_ingredient(ingredient_type);
+        for other in &other_ingredients{
+            if !self.is_matching_ingredient(&other.name, &ingredient.name){
+                return None
+            }
+        }
+        Some(ingredient)
+    }
     pub fn is_matching_ingredient(&self, ingredient: &str, other_ingredient: &str) -> bool {
         let contained_ingredient = self.get_ingredient(ingredient).unwrap();
         let possible_ingredient = self.ingredients.get(other_ingredient).unwrap();
 
-        match possible_ingredient.ingredient_type {
+        match contained_ingredient.ingredient_type {
             IngredientType::Pasta => {
                 return possible_ingredient.matching_pasta.len() == 0
                     || possible_ingredient
