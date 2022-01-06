@@ -1,1 +1,144 @@
-{"ingredients":{"Gouda":{"name":"Gouda","weights":[0,0,0],"ingredient_type":"Cheese","matching_pasta":[],"matching_vegtables":["Tomato"],"matching_cheese":[],"matching_meat":[],"matching_sauce":[]},"Tomato":{"name":"Tomato","weights":[0,0,0],"ingredient_type":"Vegtable","matching_pasta":[],"matching_vegtables":[],"matching_cheese":["Gouda"],"matching_meat":[],"matching_sauce":[]}}}
+{
+    "ingredients": {
+        "Spaghetti": {
+        "name": "Spaghetti",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Pasta",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      },
+      "Bolognese": {
+        "name": "Bolognese",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Sauce",
+        "matching_pasta": [],
+        "matching_vegtables": ["Italian-vegetable-mix", "Peas", "Tomato"],
+        "matching_cheese": ["Gouda", "Parmesan"],
+        "matching_meat": ["Ground-beef", "Ham"],
+        "matching_sauce": []
+      },
+      "Carbonara": {
+        "name": "Carbonara",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Sauce",
+        "matching_pasta": [],
+        "matching_vegtables": ["Peas"],
+        "matching_cheese": ["Parmesan"],
+        "matching_meat": ["Ham"],
+        "matching_sauce": []
+      },
+      "Gouda": {
+        "name": "Gouda",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Cheese",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      },
+      "Parmesan": {
+        "name": "Parmesan",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Cheese",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      },
+      "Ground-beef": {
+        "name": "Ground-beef",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Meat",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": ["Bolognese"]
+      },
+      "Ham": {
+        "name": "Ham",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Meat",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": ["Carbonara", "Bolognese"]
+      },
+      "Italian-vegetable-mix": {
+        "name": "Italian-vegetable-mix",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Vegtable",
+        "matching_pasta": ["Spaghetti"],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      },
+      "Peas": {
+        "name": "Peas",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Vegtable",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      },
+      "Tomato": {
+        "name": "Tomato",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "ingredient_type": "Vegtable",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": [],
+        "matching_meat": [],
+        "matching_sauce": []
+      }
+    }
+  }

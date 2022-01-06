@@ -67,7 +67,63 @@ impl IngredientCollection {
         self.ingredients = ingredients.ingredients;
         Ok(())
     }
-    pub fn get_ingredient(&self, name: &String) -> Option<&Ingredient> {
+    pub fn get_ingredient(&self, name: &str) -> Option<&Ingredient> {
         self.ingredients.get(name)
+    }
+    pub fn get_random_ingredient(&self, ingredientType: IngredientType) {}
+    pub fn is_matching_ingredient(&self, ingredient: &str, other_ingredient: &str) -> bool {
+        let contained_ingredient = self.get_ingredient(ingredient).unwrap();
+        let possible_ingredient = self.ingredients.get(other_ingredient).unwrap();
+
+        match possible_ingredient.ingredient_type {
+            IngredientType::Pasta => {
+                return possible_ingredient.matching_pasta.len() == 0
+                    || possible_ingredient
+                        .matching_pasta
+                        .contains(&contained_ingredient.name)
+            }
+            IngredientType::Vegtable => {
+                return possible_ingredient.matching_vegtables.len() == 0
+                    || possible_ingredient
+                        .matching_vegtables
+                        .contains(&contained_ingredient.name)
+            }
+            IngredientType::Cheese => {
+                return possible_ingredient.matching_cheese.len() == 0
+                    || possible_ingredient
+                        .matching_cheese
+                        .contains(&contained_ingredient.name)
+            }
+            IngredientType::Meat => {
+                return possible_ingredient.matching_meat.len() == 0
+                    || possible_ingredient
+                        .matching_meat
+                        .contains(&contained_ingredient.name)
+            }
+            IngredientType::Sauce => {
+                return possible_ingredient.matching_sauce.len() == 0
+                    || possible_ingredient
+                        .matching_sauce
+                        .contains(&contained_ingredient.name)
+            }
+        }
+    }
+}
+
+pub struct Recipe {
+    pub ingredients: Vec<Ingredient>,
+}
+
+impl Recipe {
+    pub fn new() -> Recipe {
+        Recipe {
+            ingredients: Vec::new(),
+        }
+    }
+    pub fn print_ingredients(&self) {
+        println!("Ingredients: ");
+        for item in &self.ingredients {
+            println!("{} grams of {}", item.weights[0], item.name);
+        }
     }
 }
