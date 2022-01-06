@@ -24,8 +24,20 @@ fn main() {
 
     recipe.print_ingredients();
 
-    println!("Does match: {}", collection.is_matching_ingredient("Spaghetti", "Carbonara"));
-    println!("Does match: {}", collection.is_matching_ingredient("Carbonara", "Spaghetti"));
+    println!(
+        "Does match: {}",
+        collection.is_matching_ingredient("Spaghetti", "Carbonara")
+    );
+    println!(
+        "Does match: {}",
+        collection.is_matching_ingredient("Carbonara", "Spaghetti")
+    );
+
+    println!("Collection has the following cheeses:");
+    let cheeses = collection.get_ingredient_of_type(IngredientType::Cheese);
+    for cheese in cheeses {
+        println!("{}", cheese.name);
+    }
 
     println!("Hello, world!");
 }

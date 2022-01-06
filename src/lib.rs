@@ -3,7 +3,7 @@ use std::{collections::HashMap, fs::File, io::Read};
 use serde::{Deserialize, Serialize, __private::de::IdentifierDeserializer};
 use serde_json::Result;
 
-#[derive(Serialize, Deserialize, Clone)]
+#[derive(Serialize, Deserialize, Clone, PartialEq)]
 pub enum IngredientType {
     Pasta,
     Vegtable,
@@ -107,6 +107,17 @@ impl IngredientCollection {
                         .contains(&contained_ingredient.name)
             }
         }
+    }
+    pub fn get_ingredient_of_type(&self, ingredient_type: IngredientType) -> Vec<&Ingredient> {
+        let mut v = Vec::new();
+
+        for item in &self.ingredients {
+            if item.1.ingredient_type == ingredient_type {
+                v.push(item.1);
+            }
+        }
+
+        v
     }
 }
 
