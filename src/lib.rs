@@ -151,7 +151,7 @@ impl Recipe {
         }
     }
     pub fn print_ingredients(&self) {
-        println!("Ingredients: ");
+        println!("Ingredients (4 serves): ");
         for item in &self.ingredients {
             println!("{} grams of {}", item.weights[0], item.name);
         }

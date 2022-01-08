@@ -48,7 +48,9 @@ fn main() {
 
     println!("Generated recipe for: {} {} with {}", recipe.ingredients[0].name, recipe.ingredients[1].name,recipe.ingredients[3].name);
 
+    println!("");
     recipe.print_ingredients();
+    println!("");
 
     println!("Steps:");
     println!("1) Bring a large pot of salted water to a boil and cook the {} 'al dente' in roughly {} minutes.", recipe.ingredients[0].name, recipe.ingredients[0].time);
