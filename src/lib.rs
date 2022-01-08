@@ -17,6 +17,7 @@ pub enum IngredientType {
 pub struct Ingredient {
     pub name: String,
     pub weights: Vec<u32>,
+    pub time: u32,
     pub ingredient_type: IngredientType,
 
     pub matching_pasta: Vec<String>,
@@ -31,6 +32,7 @@ impl Ingredient {
         Ingredient {
             name: name,
             weights: [0, 0, 0].to_vec(),
+            time: 0,
             ingredient_type: ingredient_type,
             matching_pasta: Vec::new(),
             matching_vegtables: Vec::new(),
@@ -82,15 +84,15 @@ impl IngredientCollection {
     pub fn get_random_matching_ingredient(&self, ingredient_type: IngredientType, other_ingredients: Vec<&Ingredient>) -> Option<&Ingredient>{
         let ingredient = self.get_random_ingredient(ingredient_type);
         for other in &other_ingredients{
-            if !self.is_matching_ingredient(&other.name, &ingredient.name){
+            if !self.is_matching_ingredient(&other, &ingredient){
                 return None
             }
         }
         Some(ingredient)
     }
-    pub fn is_matching_ingredient(&self, ingredient: &str, other_ingredient: &str) -> bool {
-        let contained_ingredient = self.get_ingredient(ingredient).unwrap();
-        let possible_ingredient = self.ingredients.get(other_ingredient).unwrap();
+    pub fn is_matching_ingredient(&self, ingredient: &Ingredient, other_ingredient: &Ingredient) -> bool {
+        let contained_ingredient = ingredient;
+        let possible_ingredient = other_ingredient;
 
         match contained_ingredient.ingredient_type {
             IngredientType::Pasta => {

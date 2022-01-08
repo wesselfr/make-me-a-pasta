@@ -3,10 +3,11 @@
         "Spaghetti": {
         "name": "Spaghetti",
         "weights": [
-          0,
+          200,
           0,
           0
         ],
+        "time": 11,
         "ingredient_type": "Pasta",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -17,10 +18,11 @@
       "Tagliatelle": {
         "name": "Tagliatelle",
         "weights": [
-          0,
+          200,
           0,
           0
         ],
+        "time": 11,
         "ingredient_type": "Pasta",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -31,10 +33,11 @@
       "Fettuccine": {
         "name": "Fettuccine",
         "weights": [
-          0,
+          200,
           0,
           0
         ],
+        "time": 11,
         "ingredient_type": "Pasta",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -45,13 +48,14 @@
       "Bolognese": {
         "name": "Bolognese",
         "weights": [
-          0,
+          400,
           0,
           0
         ],
+        "time": 4,
         "ingredient_type": "Sauce",
         "matching_pasta": [],
-        "matching_vegtables": ["Italian-vegetable-mix", "Peas", "Tomato"],
+        "matching_vegtables": ["Italian-vegetable-mix", "Peas", "CherryTomatoes"],
         "matching_cheese": ["Gouda", "Parmesan"],
         "matching_meat": ["Ground-beef", "Ham"],
         "matching_sauce": []
@@ -59,10 +63,11 @@
       "Carbonara": {
         "name": "Carbonara",
         "weights": [
-          0,
+          400,
           0,
           0
         ],
+        "time": 4,
         "ingredient_type": "Sauce",
         "matching_pasta": [],
         "matching_vegtables": ["Peas"],
@@ -73,10 +78,11 @@
       "Gouda": {
         "name": "Gouda",
         "weights": [
-          0,
+          100,
           0,
           0
         ],
+        "time": 0,
         "ingredient_type": "Cheese",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -87,10 +93,11 @@
       "Parmesan": {
         "name": "Parmesan",
         "weights": [
-          0,
+          100,
           0,
           0
         ],
+        "time": 0,
         "ingredient_type": "Cheese",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -101,10 +108,11 @@
       "Ground-beef": {
         "name": "Ground-beef",
         "weights": [
-          0,
+          250,
           0,
           0
         ],
+        "time": 4,
         "ingredient_type": "Meat",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -115,10 +123,11 @@
       "Ham": {
         "name": "Ham",
         "weights": [
-          0,
+          300,
           0,
           0
         ],
+        "time": 2,
         "ingredient_type": "Meat",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -129,10 +138,11 @@
       "Italian-vegetable-mix": {
         "name": "Italian-vegetable-mix",
         "weights": [
-          0,
+          400,
           0,
           0
         ],
+        "time": 6,
         "ingredient_type": "Vegtable",
         "matching_pasta": ["Spaghetti"],
         "matching_vegtables": [],
@@ -143,10 +153,11 @@
       "Peas": {
         "name": "Peas",
         "weights": [
-          0,
+          220,
           0,
           0
         ],
+        "time": 6,
         "ingredient_type": "Vegtable",
         "matching_pasta": [],
         "matching_vegtables": [],
@@ -154,19 +165,35 @@
         "matching_meat": [],
         "matching_sauce": []
       },
-      "Tomato": {
-        "name": "Tomato",
+      "CherryTomatoes": {
+        "name": "Cherry tomatoes",
         "weights": [
-          0,
+          250,
           0,
           0
         ],
+        "time": 5,
         "ingredient_type": "Vegtable",
         "matching_pasta": [],
         "matching_vegtables": [],
         "matching_cheese": [],
         "matching_meat": [],
         "matching_sauce": []
+      },
+      "Spinach": {
+        "name": "Spinach",
+        "weights": [
+          0,
+          0,
+          0
+        ],
+        "time": 4,
+        "ingredient_type": "Vegtable",
+        "matching_pasta": [],
+        "matching_vegtables": [],
+        "matching_cheese": ["Gouda", "Gorgonzola", "Parmesan", "Ricotta"],
+        "matching_meat": ["Bacon", "Anchovies", "Ground-beef"],
+        "matching_sauce": ["Bolognese"]
       }
     }
   }
